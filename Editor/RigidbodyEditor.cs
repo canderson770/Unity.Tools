@@ -4,7 +4,7 @@ using UnityEngine;
 public class RigidbodyEditor : MonoBehaviour
 {
     [MenuItem("CONTEXT/Rigidbody/Toggle Constraints", false, 1100)]
-    static void FreezeAll(MenuCommand command)
+    static void ToggleConstraints(MenuCommand command)
     {
         Rigidbody rb = (Rigidbody)command.context;
         if (rb.constraints == RigidbodyConstraints.FreezeAll)
