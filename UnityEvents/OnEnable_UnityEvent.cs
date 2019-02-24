@@ -1,15 +1,18 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-/// <summary>
-/// Runs UnityEvent on OnEnable
-/// </summary>
-public class OnEnable_UnityEvent : MonoBehaviour
+namespace CustomEvents
 {
-    public UnityEvent onEnable;
-
-    private void OnEnable()
+    /// <summary>
+    /// Runs UnityEvent on OnEnable
+    /// </summary>
+    public class OnEnable_UnityEvent : MonoBehaviour
     {
-        onEnable.Invoke();
+        public UnityEvent onEnable;
+
+        private void OnEnable()
+        {
+            onEnable.Invoke();
+        }
     }
 }

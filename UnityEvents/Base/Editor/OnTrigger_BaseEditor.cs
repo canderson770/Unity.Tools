@@ -1,6 +1,7 @@
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEditor;
+using CustomEvents;
 
 [CustomEditor(typeof(OnTrigger_Base), true)]
 public class OnTrigger_BaseEditor : Editor

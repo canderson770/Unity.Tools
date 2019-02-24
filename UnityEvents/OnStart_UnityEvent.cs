@@ -1,15 +1,18 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-/// <summary>
-/// Runs UnityEvent on Start
-/// </summary>
-public class OnStart_UnityEvent : MonoBehaviour
+namespace CustomEvents
 {
-    public UnityEvent onStart;
-
-    private void Start()
+    /// <summary>
+    /// Runs UnityEvent on Start
+    /// </summary>
+    public class OnStart_UnityEvent : MonoBehaviour
     {
-        onStart.Invoke();
+        public UnityEvent onStart;
+
+        private void Start()
+        {
+            onStart.Invoke();
+        }
     }
 }

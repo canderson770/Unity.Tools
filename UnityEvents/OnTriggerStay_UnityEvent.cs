@@ -1,12 +1,15 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-/// <summary>
-/// Runs UnityEvent OnTriggerStay, Inherits from OnTrigger_Base
-/// </summary>
-public class OnTriggerStay_UnityEvent : OnTrigger_Base
+namespace CustomEvents
 {
-    private void OnTriggerStay(Collider coll)
+    /// <summary>
+    /// Runs UnityEvent OnTriggerStay, Inherits from OnTrigger_Base
+    /// </summary>
+    public class OnTriggerStay_UnityEvent : OnTrigger_Base
     {
-        CheckCollider(coll);
+        private void OnTriggerStay(Collider coll)
+        {
+            CheckCollider(coll);
+        }
     }
 }

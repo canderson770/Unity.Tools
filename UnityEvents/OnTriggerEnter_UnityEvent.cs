@@ -1,12 +1,15 @@
 using UnityEngine;
 
-/// <summary>
-/// Runs UnityEvent OnTriggerEnter, Inherits from OnTrigger_Base
-/// </summary>
-public class OnTriggerEnter_UnityEvent : OnTrigger_Base
+namespace CustomEvents
 {
-    private void OnTriggerEnter(Collider coll)
+    /// <summary>
+    /// Runs UnityEvent OnTriggerEnter, Inherits from OnTrigger_Base
+    /// </summary>
+    public class OnTriggerEnter_UnityEvent : OnTrigger_Base
     {
-        CheckCollider(coll);
+        private void OnTriggerEnter(Collider coll)
+        {
+            CheckCollider(coll);
+        }
     }
 }

@@ -1,15 +1,18 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-/// <summary>
-/// Runs UnityEvent on OnDisable
-/// </summary>
-public class OnDisable_UnityEvent : MonoBehaviour
+namespace CustomEvents
 {
-    public UnityEvent onDisable;
-
-    private void OnDisable()
+    /// <summary>
+    /// Runs UnityEvent on OnDisable
+    /// </summary>
+    public class OnDisable_UnityEvent : MonoBehaviour
     {
-        onDisable.Invoke();
+        public UnityEvent onDisable;
+
+        private void OnDisable()
+        {
+            onDisable.Invoke();
+        }
     }
 }
