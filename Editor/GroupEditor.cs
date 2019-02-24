@@ -6,7 +6,7 @@ public class GroupEditor
     private const string control = "%", alt = "&", shift = "#", hotkey = "g";
     private const string groupName = "Group";
 
-    [MenuItem("Custom Editor Tools/GameObject/Group GameObjects " + control + hotkey, false, 1)]
+    [MenuItem("GameObject/Group GameObjects " + control + hotkey, false, 1)]
     public static void GroupSelection()
     {
         //  if no selection

@@ -4,7 +4,7 @@ public class ConsoleEditor
 {
     private const string control = "%", alt = "&", shift = "#", hotkey = "c";
 
-    [MenuItem("Custom Editor Tools/Tools/Clear Console " + alt + hotkey, false, int.MaxValue)]
+    [MenuItem("Window/Clear Console " + alt + hotkey, false, 2200)]
     public static void ClearConsole()
     {
         var logEntries = System.Type.GetType("UnityEditor.LogEntries,UnityEditor.dll");
