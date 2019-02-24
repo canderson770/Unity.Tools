@@ -29,9 +29,7 @@ public class OnTrigger_BaseEditor : Editor
         DrawSettings();
 
         //  UnityEvent
-        //serializedObject.Update();
         EditorGUILayout.PropertyField(serializedObject.FindProperty("onTrigger"), true);
-        //serializedObject.ApplyModifiedProperties();
 
         // Apply changes to the serializedProperty - always do this in the end of OnInspectorGUI.
         serializedObject.ApplyModifiedProperties();

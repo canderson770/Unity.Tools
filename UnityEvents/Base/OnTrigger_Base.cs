@@ -20,10 +20,12 @@ public abstract class OnTrigger_Base : MonoBehaviour
     /// </summary>
     protected void CheckCollider(Collider coll)
     {
+        if (!enabled) return;
+
         switch (checksFor)
         {
             case Check.Name:
-                if (!string.IsNullOrEmpty(nameContains) && coll.name.Contains(nameContains))
+                if (!string.IsNullOrEmpty(nameContains) && coll.gameObject.name.Contains(nameContains))
                     onTrigger.Invoke();
                 break;
             case Check.Layer:
@@ -31,9 +33,15 @@ public abstract class OnTrigger_Base : MonoBehaviour
                     onTrigger.Invoke();
                 break;
             case Check.Tag:
-                if (!string.IsNullOrEmpty(tagName) && coll.CompareTag(tag))
+                if (!string.IsNullOrEmpty(tagName) && coll.gameObject.CompareTag(tagName))
                     onTrigger.Invoke();
                 break;
         }
     }
+
+
+    /// <summary>
+    /// Used to make enabled bool show in Inspector
+    /// </summary>
+    protected void Start() { }
 }

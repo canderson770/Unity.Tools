@@ -10,6 +10,11 @@ public class OnAwake_UnityEvent : MonoBehaviour
 
     private void Awake()
     {
-        onAwake.Invoke();
+        if (enabled) onAwake.Invoke();
     }
+
+    /// <summary>
+    /// Used to make enabled bool show in Inspector
+    /// </summary>
+    private void Start() { }
 }
