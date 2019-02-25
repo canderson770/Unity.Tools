@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 
-namespace Custom_UI_Editor
+namespace CustomEditors
 {
     public class RectTransformEditor
     {
