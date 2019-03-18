@@ -1,7 +1,9 @@
 using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 namespace Saving
 {
@@ -9,7 +11,6 @@ namespace Saving
     {
         private BinaryFormatter bf = new BinaryFormatter();
         [SerializeField] private ScriptableObjectAction scriptableObject;
-        //[SerializeField] private string saveLocation;
 
         private void Awake()
         {
@@ -28,6 +29,7 @@ namespace Saving
             if (scriptableObject != null) scriptableObject.OnChange -= Save;
         }
 
+#if UNITY_EDITOR
         public void ShowSaveLocation()
         {
             if (File.Exists(GetPath()))
@@ -35,6 +37,7 @@ namespace Saving
             else
                 EditorUtility.RevealInFinder(Application.persistentDataPath);
         }
+#endif
 
         /// <summary>
         /// Saves ScriptableObject
