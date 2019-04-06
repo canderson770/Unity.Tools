@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 namespace CustomEditors
 {
@@ -13,7 +14,7 @@ namespace CustomEditors
             if (Selection.activeGameObject == null) return;
 
             if (EditorUtility.DisplayDialog("Warning!",
-                "This will remove many components on " + Selection.activeGameObject.name + " and CANNOT be undone. Continue?", "Yes", "No"))
+                "This will remove many components on " + Selection.activeGameObject.name + ". Continue?", "Yes", "No"))
             {
                 RemoveScripts();
                 RemoveLights();
@@ -34,7 +35,7 @@ namespace CustomEditors
             List<MonoBehaviour> s = new List<MonoBehaviour>();
             foreach (var script in scripts)
             {
-                if (!(script is Graphic))
+                if (!(script is Graphic) && !(script is UIBehaviour))
                 {
                     s.Add(script);
                 }
@@ -104,7 +105,7 @@ namespace CustomEditors
             DestroyObjects(components);
         }
 
-        [MenuItem("Tools/Remove/Remove All Colliders In Children", false, 111)]
+        [MenuItem("Tools/Remove/Remove All Colliders In Children", false, 11)]
         public static void RemoveColliders()
         {
             if (Selection.activeGameObject == null) return;
