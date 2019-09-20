@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
-
-public static class RectTools
+public static class RectTransformExtensions
 {
     public static void SetLeft(this RectTransform rt, float left)
     {
@@ -31,5 +30,16 @@ public static class RectTools
     public static void SetHeight(this RectTransform rt, float height)
     {
         rt.sizeDelta = new Vector2(rt.sizeDelta.x, height);
+    }
+
+    public static void SetPivot(this RectTransform rectTransform, Vector2 pivot)
+    {
+        Vector3 deltaPosition = rectTransform.pivot - pivot;    // get change in pivot
+        deltaPosition.Scale(rectTransform.rect.size);           // apply sizing
+        deltaPosition.Scale(rectTransform.localScale);          // apply scaling
+        deltaPosition = rectTransform.rotation * deltaPosition; // apply rotation
+
+        rectTransform.pivot = pivot;                            // change the pivot
+        rectTransform.localPosition -= deltaPosition;           // reverse the position change
     }
 }
